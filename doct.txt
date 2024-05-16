@@ -1,0 +1,119 @@
+Pengenalan Web
+
+Kenapa Web?
+● Saat ini web digunakan oleh jutaan, bahkan mungkin milyaran orang setiap hari
+● Dengan web, kita bisa melakukan belajar online, mendengarkan musik online, nonton video online,
+  belanja online, sampai memesan makanan secara online
+● Namun perlu diperhatikan, Web bukanlah Internet
+
+Internet
+● Internet adalah mekanisme komunikasi antar komputer
+● Awal internet ada, untuk komunikasi antar komputer, kita membutuhkan jaringan kabel telpon
+● Namun sekarang, semenjak berjamurnya jaringan wifi dan sejenisnya, komunikasi antar komputer
+  menjadi lebih cepat dan mudah
+
+Web
+● Web merupakan kumpulan informasi yang tersedia dalam sebuah komputer yang terkoneksi
+  secara terus menerus melalui internet
+● Web bisa berisi informasi dalam bentuk apapun, seperti teks, gambar, audio, video dan lain-lain
+● Web berjalan di aplikasi yang bernama Web Server, yaitu aplikasi yang digunakan untuk
+  menyimpan dan menyampaikan isi informasi Web
+
+Web Host
+● Pemilik Web, biasanya tidak menjalankan aplikasi Web Server di komputer pribadi nya
+● Biasanya mereka akan menyewa komputer di tempat penyedia data center (kumpulan komputer)
+  yang terjamin keandalan dan kecepatan koneksi internetnya
+● Pihak penyedia komputer untuk Web Server biasa disebut Web Host
+
+Domain
+● Saat komputer Web terhubung ke internet, biasanya dia memiliki alamat
+● Alamat ini bernama ip address, formatnya misal nya 172.217.194.94
+● Karena alamat ip address sangat menyulitkan untuk diingat
+● Untung saja ada yang namanya nama domain
+● Nama domain adalah alamat yang bisa digunakan sebagai alias ke ip address
+● Misal seperti google.co.id, blibli.com, dan lain-lain
+● Dengan nama domain, sebagai manusia kita akan mudah mengingat dibandingkan ip address
+● Namun, saat kita menggunakan nama domain, sebenarnya komputer tetap akan mengakses web
+  menggunakan alamat ip address
+
+Web Browser
+● Jika Web Server adalah aplikasi yang digunakan untuk menyimpan informasi Web
+● Web Browser adalah aplikasi yang digunakan untuk mengakses Web melalui internet
+● Kita bisa saja mengakses Web secara langsung tanpa bantuan Web Browser, namun Web Server
+  hanya akan memberikan informasi bahasa mesin seperti HTML, JavaScript, CSS, Gambar, Video
+  dan lain-lain
+● Dengan menggunakan Web Browser, semua bahasa mesin tersebut bisa ditampilkan secara visual
+  sehingga kita bisa menyerap informasinya dengan lebih mudah
+
+Client dan Server
+● Web adalah aplikasi berbasis Client dan Server, sekarang pertanyaannya, apa itu Client dan Server?
+● Sederhananya client server merupakan konsep arsitektur aplikasi yang menghubungkan dua pihak,
+  sistem client dan sistem server
+● Sistem client dan sistem server yang saling berkomunikasi melalui jaringan komputer, internet,
+  atau juga bisa di komputer yang sama
+
+Tugas Client dan Server
+● Aplikasi Client bertugas mengirim request ke Server, dan menerima response dari Server
+● Sedangkan, aplikasi Server bertugas menerima request dari Client, memproses data, dan
+  mengembalikan hasil proses data ke Client
+
+Keuntungan Client dan Server
+● Perubahan aplikasi bisa dilakukan dengan mudah di server, tanpa harus membuat perubahan di
+  client, apalagi jika client nya di lokasi yang sulit dijangkau
+● Bisa digunakan oleh banyak client pada saat yang bersamaan, walaupun server tidak banyak
+● Bisa diakses dari mana saja, asal terhubung satu jaringan dengan server
+
+Contoh Client dan Server
+● Web adalah salah satu contoh arsitektur client server
+● Aplikasi yang bertugas sebagai Client adalah Web Browser (Chrome, Firefox, Opera, Edge dan
+  lain-lain)
+● Aplikasi yang bertugas sebagai Server adalah Web Server, dimana di dalam web server terdapat
+  kode program Web kita
+
+PHP Web
+● PHP sendiri sejak awal memang diperuntukkan membuat aplikasi Web
+● Di materi course-course sebelumnya kita sudah belajar bahasa pemrograman PHP, namun masih
+  menggunakan PHP CLI (command line interface) atau berbasis terminal
+● Pada course ini kita akan fokus membuat Web menggunakan PHP
+
+Cara Kerja PHP Web
+1. Web Browser akan melakukan HTTP Request ke Web Server
+2. Web Server menerima HTTP Request, lalu mengeksekusi file PHP yang sesuai dengan request
+   tersebut
+3. File PHP akan di eksekusi, lalu akan menjalankan kode program PHP, hasilnya akan di render
+   menjadi content yang sesuai dengan yang dilakukan di kode program
+4. Hasil content yang dibuat PHP (misal HTML, CSS, JavaScript, dan lain-lain) akan dikembalikan ke
+   Web Server
+5. Web Server akan mengembalikan content tersebut sebagai HTTP Response ke Web Browser
+6. Web Browser menerima content dari Web Server, lalu me-render content tersebut sesuai dengan
+   tipe content nya
+
+PHP Development Server
+● Seperti yang sudah kita bahas sebelumnya, agar web bisa diakses, kita perlu menyimpan web
+  tersebut di dalam aplikasi Web Server
+● Saat kita menginstall XAMPP, di dalam nya terdapat aplikasi Apache HTTPD, itu adalah salah satu
+  aplikasi Web Server
+● Namun pada course ini, saya tidak akan menggunakan Apache HTTPD, saya akan menggunakan
+  Web Server sederhana yang sudah disediakan langsung oleh PHP, namanya PHP Development Server
+
+PERINGATAN!
+● PHP Development Server adalah aplikasi Web Server untuk membantu mempermudah
+  menjalankan Web Server untuk PHP Web
+● Fitur ini hanya untuk proses development, bukan untuk dijalankan di Web Host
+● PHP Development Server hanya memiliki 1 thread, artinya hanya bisa menjalankan 1 proses dalam
+  satu waktu
+
+Menjalankan PHP Development Server
+● php -S host:port
+● Di komputer pribadi, kita bisa gunakan host dengan nama localhost
+● Untuk nomor port, kita bisa gunakan bebas, asal port nya tidak digunakan oleh aplikasi lain
+● Misal : php -S localhost:8080
+● Artinya PHP Development Server akan bisa diakses di http://localhost:8080
+● Ingat, kita wajib menjalankan perintah ini di folder tempat kita menyimpan kode program PHP kita
+
+Hot Reload
+● PHP adalah bahasa pemrograman yang tidak butuh di compile terlebih dahulu
+● Selain itu PHP juga mendukung fitur hot reload, artinya setiap perubahan yang kita lakukan di kode
+  program PHP, kita tidak butuh melakukan restart aplikasi Web Server nya
+● Kita cukup melakukan request ulang dari Web Browser, secara otomatis Web Server akan
+  menjalankan kode program PHP terbaru kita
